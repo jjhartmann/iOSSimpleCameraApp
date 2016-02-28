@@ -112,10 +112,9 @@
     }
 }
 
-- (IBAction)swipeFromRight:(id)sender
+- (IBAction)swipeFromLeft:(id)sender
 {
-    
-
+    [self showMeny:YES];
 }
 
 #pragma mark -
@@ -148,12 +147,21 @@
     
     // set Gravity
     CGFloat gravityX = (state) ? 0.3 : -1.0;
+    CGFloat boundaryPX = (state) ? 170 : -170;
     
     // Set up gravity animation
     UIGravityBehavior *gb = [[UIGravityBehavior alloc] initWithItems:@[self.menuView]];
     gb.gravityDirection = CGVectorMake(gravityX, 0.0f);
     
     [self.anaimator addBehavior:gb];
+    
+    
+    // Collision Behaviour
+    UICollisionBehavior *cb = [[UICollisionBehavior alloc] initWithItems:@[self.menuView]];
+    [cb addBoundaryWithIdentifier:@"menuBoundary" fromPoint:CGPointMake(boundaryPX, 580) toPoint:CGPointMake(boundaryPX, 0) ];
+    
+    [self.anaimator addBehavior:cb];
+    
 }
 
 

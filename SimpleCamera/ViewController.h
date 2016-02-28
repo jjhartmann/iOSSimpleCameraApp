@@ -28,7 +28,7 @@
 // Method Declaration
 - (IBAction)cameraButton:(id)sender;
 - (IBAction)cemeraRollButton:(id)sender;
-- (IBAction)swipeFromRight:(id)sender;
+- (IBAction)swipeFromLeft:(id)sender;
 
 - (void)setupMenuView;
 - (void)showMeny:(BOOL)state;
