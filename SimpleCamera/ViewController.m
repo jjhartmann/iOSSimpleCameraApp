@@ -68,7 +68,8 @@
     self.menuItems = @[@"Close", @"MENU1", @"MENU2"];
     [self setupMenuView];
     
-    
+    // Animator
+    self.anaimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
     
     
@@ -143,7 +144,16 @@
 
 - (void)showMeny:(BOOL)state
 {
+    [self.anaimator removeAllBehaviors];
     
+    // set Gravity
+    CGFloat gravityX = (state) ? 0.3 : -1.0;
+    
+    // Set up gravity animation
+    UIGravityBehavior *gb = [[UIGravityBehavior alloc] initWithItems:@[self.menuView]];
+    gb.gravityDirection = CGVectorMake(gravityX, 0.0f);
+    
+    [self.anaimator addBehavior:gb];
 }
 
 
