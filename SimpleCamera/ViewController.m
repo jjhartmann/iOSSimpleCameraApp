@@ -8,8 +8,12 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
+@interface ViewController (){
+    CGFloat rootViewWidth;
+    CGFloat rootViewHieght;
+    CGFloat menuWidth;
+    CGFloat menuHieght;
+}
 
 @end
 
@@ -19,6 +23,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    // Delcare Member Vars
+    rootViewWidth = self.view.frame.size.width;
+    rootViewHieght = self.view.frame.size.height;
+    menuWidth = (3* rootViewWidth)/4;
+    menuHieght = rootViewHieght;
+    
+    // Setup capture session
     if (self.captureSession == nil)
     {
         self.captureSession = [AVCaptureSession new];
@@ -122,7 +133,7 @@
 
 - (void)setupMenuView
 {
-    self.menuView = [[UIView alloc] initWithFrame:CGRectMake(-170, 177, 170, 290)];
+    self.menuView = [[UIView alloc] initWithFrame:CGRectMake(-menuWidth, 0, menuWidth, menuHieght)];
     
     self.menuView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.menuView];
@@ -147,7 +158,7 @@
     
     // set Gravity
     CGFloat gravityX = (state) ? 0.3 : -1.0;
-    CGFloat boundaryPX = (state) ? 170 : -170;
+    CGFloat boundaryPX = (state) ? menuWidth : -(menuWidth + 5);
     
     // Set up gravity animation
     UIGravityBehavior *gb = [[UIGravityBehavior alloc] initWithItems:@[self.menuView]];
