@@ -18,31 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-C5-fZn">
-                                <rect key="frame" x="-6" y="0.0" width="606" height="606"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-T3-M1S">
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-T3-M1S">
                                 <rect key="frame" x="262" y="503" width="77" height="77"/>
                                 <state key="normal" image="button_plain_01"/>
                                 <connections>
                                     <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dYv-jD-HeT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-jq-xDO">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-jq-xDO">
                                 <rect key="frame" x="494" y="552" width="86" height="28"/>
                                 <state key="normal" title="Camera Roll"/>
                                 <connections>
                                     <action selector="cemeraRollButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CXY-JS-7TC"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-C5-fZn">
+                                <rect key="frame" x="-6" y="0.0" width="606" height="606"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tYN-C5-fZn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="6PU-Do-nHs"/>
                             <constraint firstItem="tYN-C5-fZn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="HFI-66-1B6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="f9g-T3-M1S" secondAttribute="trailing" constant="257" id="Qzg-Al-cDM"/>
-                            <constraint firstItem="f9g-T3-M1S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="257" id="Si9-wB-hU8"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f9g-T3-M1S" secondAttribute="bottom" constant="113" id="rSP-Bb-XEU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6sA-jq-xDO" secondAttribute="bottom" constant="20" id="P5u-Aw-DV4"/>
+                            <constraint firstItem="6sA-jq-xDO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="R2F-m2-Tf7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f9g-T3-M1S" secondAttribute="bottom" constant="20" id="eyC-ZM-Dgi"/>
                             <constraint firstAttribute="bottomMargin" secondItem="tYN-C5-fZn" secondAttribute="bottom" constant="-6" id="uGe-4Z-T3M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tYN-C5-fZn" secondAttribute="trailing" constant="-20" id="v9y-jN-UN5"/>
                         </constraints>
