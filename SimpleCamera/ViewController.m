@@ -64,6 +64,12 @@
     [self.captureSession startRunning];
     
     
+    // Set menu items
+    self.menuItems = @[@"Close", @"MENU1", @"MENU2"];
+    [self setupMenuView];
+    
+    
+    
     
     
 }
@@ -104,6 +110,72 @@
         self.newMedia = NO;
     }
 }
+
+- (IBAction)swipeFromRight:(id)sender
+{
+    
+
+}
+
+#pragma mark -
+#pragma mark Sliding Menu Impl
+
+- (void)setupMenuView
+{
+    self.menuView = [[UIView alloc] initWithFrame:CGRectMake(-170, 177, 170, 290)];
+    
+    self.menuView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.menuView];
+    
+    
+    // Set up Table View.
+    self.menuTableView = [[UITableView alloc] initWithFrame:self.menuView.bounds style:UITableViewStylePlain];
+    self.menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.menuTableView.scrollEnabled = NO;
+    self.menuTableView.alpha = 1.0;
+    
+    self.menuTableView.delegate = self;
+    self.menuTableView.dataSource = self;
+    
+    [self.menuView addSubview:self.menuTableView];
+    
+}
+
+- (void)showMeny:(BOOL)state
+{
+    
+}
+
+
+#pragma mark -
+#pragma mark UITableView Delegate and Datasource methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.menuItems.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Implement cell
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    
+    NSString *text = self.menuItems[indexPath.row];
+    cell.textLabel.text = text;
+    cell.backgroundColor = [UIColor clearColor];
+    
+    return cell;
+}
+
 
 #pragma mark -
 #pragma mark UIImagePickerControllerDelegate

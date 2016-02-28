@@ -20,6 +20,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-C5-fZn">
                                 <rect key="frame" x="-6" y="0.0" width="606" height="600"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fVh-ca-HgT" appends="YES" id="87h-AG-2kf"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-jq-xDO">
                                 <rect key="frame" x="497" y="550" width="83" height="30"/>
@@ -53,6 +57,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="fVh-ca-HgT">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="swipeFromRight:" destination="BYZ-38-t0r" id="JWm-el-YsO"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="700" y="479"/>
         </scene>
