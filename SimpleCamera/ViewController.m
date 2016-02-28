@@ -194,6 +194,18 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0: // Close the menu
+            [self showMeny:NO];
+            break;
+            
+        default:
+            break;
+    }
+}
+
 
 #pragma mark -
 #pragma mark UIImagePickerControllerDelegate
