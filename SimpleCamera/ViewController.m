@@ -24,9 +24,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)cameraButton:(id)sender {
+- (IBAction)cameraButton:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
+        imagePicker.allowsEditing = NO;
+        
+        [self presentViewController:imagePicker animated:YES completion:nil];
+        
+        self.newMedia = YES;
+    }
 }
 
-- (IBAction)cemeraRollButton:(id)sender {
+- (IBAction)cemeraRollButton:(id)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+    {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
+        imagePicker.allowsEditing = NO;
+        
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
 }
 @end
