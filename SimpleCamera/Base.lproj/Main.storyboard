@@ -18,28 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-T3-M1S">
-                                <rect key="frame" x="262" y="503" width="77" height="77"/>
-                                <state key="normal" image="button_plain_01"/>
-                                <connections>
-                                    <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dYv-jD-HeT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-jq-xDO">
-                                <rect key="frame" x="494" y="552" width="86" height="28"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-C5-fZn">
+                                <rect key="frame" x="-6" y="0.0" width="606" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-jq-xDO">
+                                <rect key="frame" x="497" y="550" width="83" height="30"/>
                                 <state key="normal" title="Camera Roll"/>
                                 <connections>
                                     <action selector="cemeraRollButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CXY-JS-7TC"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-C5-fZn">
-                                <rect key="frame" x="-6" y="0.0" width="606" height="606"/>
-                            </imageView>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-T3-M1S">
+                                <rect key="frame" x="259" y="503" width="77" height="77"/>
+                                <state key="normal" image="button_plain_01"/>
+                                <connections>
+                                    <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dYv-jD-HeT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tYN-C5-fZn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="6PU-Do-nHs"/>
                             <constraint firstItem="tYN-C5-fZn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="HFI-66-1B6"/>
+                            <constraint firstItem="f9g-T3-M1S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hsl-Gt-ijp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6sA-jq-xDO" secondAttribute="bottom" constant="20" id="P5u-Aw-DV4"/>
                             <constraint firstItem="6sA-jq-xDO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="R2F-m2-Tf7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f9g-T3-M1S" secondAttribute="bottom" constant="20" id="eyC-ZM-Dgi"/>
@@ -57,6 +58,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button_plain_01" width="243" height="243"/>
+        <image name="button_plain_01" width="81" height="81"/>
     </resources>
 </document>
