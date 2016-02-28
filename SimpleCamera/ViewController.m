@@ -143,7 +143,7 @@
     self.menuTableView = [[UITableView alloc] initWithFrame:self.menuView.bounds style:UITableViewStylePlain];
     self.menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.menuTableView.scrollEnabled = NO;
-    self.menuTableView.alpha = 1.0;
+    self.menuTableView.alpha = 0.5;
     
     self.menuTableView.delegate = self;
     self.menuTableView.dataSource = self;
