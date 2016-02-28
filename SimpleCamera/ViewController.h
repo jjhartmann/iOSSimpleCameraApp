@@ -14,6 +14,9 @@
                                               UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property BOOL newMedia;
+@property AVCaptureVideoPreviewLayer *previewLayer;
+@property AVCaptureSession *captureSession;
+
 
 - (IBAction)cameraButton:(id)sender;
 - (IBAction)cemeraRollButton:(id)sender;

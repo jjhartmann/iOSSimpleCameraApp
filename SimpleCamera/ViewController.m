@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 
+
 @end
 
 @implementation ViewController
@@ -17,6 +18,54 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    if (self.captureSession == nil)
+    {
+        self.captureSession = [AVCaptureSession new];
+    }
+    
+    // Create video device and input Device
+    AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if (!captureDevice)
+    {
+        NSLog(@"ERROR: Failed to create capture device.");
+        abort();
+    }
+    
+    
+    // Add device to session
+    NSError *error;
+    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
+    if(error)
+    {
+        NSLog(@"ERROR: Failed to create divice input, %@", error);
+        abort();
+    }
+    
+    if (![self.captureSession canAddInput:input])
+    {
+        NSLog(@"ERROR: Failed to set input to capture session");
+        abort();
+    }
+    
+    // Set Input
+    [self.captureSession addInput:input];
+    
+    // Configure preview layer
+    self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
+    self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    
+    [self.previewLayer setFrame:CGRectMake(0, 0, self.imageView.frame.size.width, self.imageView.frame.size.height)];
+    
+    // Add Layer to view
+    [self.imageView.layer addSublayer:self.previewLayer];
+    
+    // StartCamera
+    [self.captureSession startRunning];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
