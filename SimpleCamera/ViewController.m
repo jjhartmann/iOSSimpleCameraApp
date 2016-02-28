@@ -24,4 +24,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)cameraButton:(id)sender {
+}
+
+- (IBAction)cemeraRollButton:(id)sender {
+}
 @end

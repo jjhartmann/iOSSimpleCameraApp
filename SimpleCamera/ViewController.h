@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIImagePickerControllerDelegate,
+                                              UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+- (IBAction)cameraButton:(id)sender;
+- (IBAction)cemeraRollButton:(id)sender;
 
 @end
 

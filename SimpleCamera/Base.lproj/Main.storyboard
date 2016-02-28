@@ -18,12 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-C5-fZn">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="606"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-C5-fZn">
+                                <rect key="frame" x="-6" y="0.0" width="606" height="606"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-T3-M1S">
-                                <rect key="frame" x="262" y="475" width="77" height="77"/>
+                                <rect key="frame" x="262" y="503" width="77" height="77"/>
                                 <state key="normal" image="button_plain_01"/>
+                                <connections>
+                                    <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dYv-jD-HeT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sA-jq-xDO">
+                                <rect key="frame" x="494" y="552" width="86" height="28"/>
+                                <state key="normal" title="Camera Roll"/>
+                                <connections>
+                                    <action selector="cemeraRollButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CXY-JS-7TC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -37,6 +47,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="tYN-C5-fZn" secondAttribute="trailing" constant="-20" id="v9y-jN-UN5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="tYN-C5-fZn" id="0mJ-eY-tHx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
