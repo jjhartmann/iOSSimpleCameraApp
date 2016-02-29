@@ -54,7 +54,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="tYN-C5-fZn" id="0mJ-eY-tHx"/>
-                        <segue destination="uZ0-Uu-Lpu" kind="presentation" identifier="imageViewSegue" id="6Wd-L3-6AI"/>
+                        <segue destination="uZ0-Uu-Lpu" kind="presentation" identifier="imageViewSegue" animates="NO" id="6Wd-L3-6AI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
