@@ -15,6 +15,7 @@
 		77DBF7701C82ED5C00B84659 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DBF76E1C82ED5C00B84659 /* LaunchScreen.storyboard */; };
 		77DBF77B1C82ED5C00B84659 /* SimpleCameraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBF77A1C82ED5C00B84659 /* SimpleCameraTests.m */; };
 		77DBF7861C82ED5C00B84659 /* SimpleCameraUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBF7851C82ED5C00B84659 /* SimpleCameraUITests.m */; };
+		77DBF7951C83D20500B84659 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBF7941C83D20500B84659 /* ImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		77DBF7811C82ED5C00B84659 /* SimpleCameraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleCameraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DBF7851C82ED5C00B84659 /* SimpleCameraUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleCameraUITests.m; sourceTree = "<group>"; };
 		77DBF7871C82ED5C00B84659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77DBF7931C83D20500B84659 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		77DBF7941C83D20500B84659 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				77DBF7661C82ED5C00B84659 /* ViewController.h */,
 				77DBF7671C82ED5C00B84659 /* ViewController.m */,
 				77DBF7691C82ED5C00B84659 /* Main.storyboard */,
+				77DBF7931C83D20500B84659 /* ImageViewController.h */,
+				77DBF7941C83D20500B84659 /* ImageViewController.m */,
 				77DBF76C1C82ED5C00B84659 /* Assets.xcassets */,
 				77DBF76E1C82ED5C00B84659 /* LaunchScreen.storyboard */,
 				77DBF7711C82ED5C00B84659 /* Info.plist */,
@@ -275,6 +280,7 @@
 			files = (
 				77DBF7681C82ED5C00B84659 /* ViewController.m in Sources */,
 				77DBF7651C82ED5C00B84659 /* AppDelegate.m in Sources */,
+				77DBF7951C83D20500B84659 /* ImageViewController.m in Sources */,
 				77DBF7621C82ED5C00B84659 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

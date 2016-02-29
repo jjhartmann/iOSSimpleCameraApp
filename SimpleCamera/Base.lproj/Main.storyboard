@@ -54,6 +54,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="tYN-C5-fZn" id="0mJ-eY-tHx"/>
+                        <segue destination="uZ0-Uu-Lpu" kind="presentation" identifier="imageViewSegue" id="6Wd-L3-6AI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -65,6 +66,48 @@
                 </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="700" y="479"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="LOc-n2-Qjh">
+            <objects>
+                <viewController id="uZ0-Uu-Lpu" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f2a-2P-fIH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vud-gs-fsm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ozK-Si-Sr0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZf-10-0Xs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v32-8Y-b5z">
+                                <rect key="frame" x="533" y="28" width="47" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="dimissImageView:" destination="uZ0-Uu-Lpu" eventType="touchUpInside" id="VTa-8p-BgQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v32-8Y-b5z" firstAttribute="top" secondItem="f2a-2P-fIH" secondAttribute="bottom" constant="8" id="3bz-vS-jeL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aZf-10-0Xs" secondAttribute="trailing" constant="-20" id="EdG-MU-xjB"/>
+                            <constraint firstItem="v32-8Y-b5z" firstAttribute="trailing" secondItem="ozK-Si-Sr0" secondAttribute="trailingMargin" id="FYn-Cj-pbT"/>
+                            <constraint firstItem="Vud-gs-fsm" firstAttribute="top" secondItem="aZf-10-0Xs" secondAttribute="bottom" id="Hd5-SK-doe"/>
+                            <constraint firstItem="aZf-10-0Xs" firstAttribute="leading" secondItem="ozK-Si-Sr0" secondAttribute="leadingMargin" constant="-20" id="aTs-8o-dyh"/>
+                            <constraint firstItem="aZf-10-0Xs" firstAttribute="top" secondItem="ozK-Si-Sr0" secondAttribute="topMargin" id="jd1-eO-idF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="aZf-10-0Xs" id="SpL-Pf-DRe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ear-II-Zsn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1531" y="479"/>
         </scene>
     </scenes>
     <resources>

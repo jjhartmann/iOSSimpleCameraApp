@@ -7,12 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "ImageViewController.h"
 
 @interface ViewController (){
     CGFloat rootViewWidth;
     CGFloat rootViewHieght;
     CGFloat menuWidth;
     CGFloat menuHieght;
+    UIImage *currentImage;
 }
 
 @end
@@ -228,16 +230,23 @@
     
     if ([mediaType isEqualToString:(NSString *) kUTTypeImage])
     {
-        UIImage *image = info[UIImagePickerControllerOriginalImage];
-        self.imageView.image = image;
+        currentImage = info[UIImagePickerControllerOriginalImage];
+        
+        // Write file to camera roll
         if(self.newMedia)
         {
-            UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:finishedSavingWithError:contextInfo:), nil);
+            UIImageWriteToSavedPhotosAlbum(currentImage, self, @selector(image:finishedSavingWithError:contextInfo:), nil);
         }
         else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie])
         {
             NSLog(@"ERROR: Movie not supported");
         }
+        
+        
+        // Open image view
+        [self performSegueWithIdentifier:@"imageViewSegue" sender:self];
+        
+        
     }
 }
 
@@ -255,6 +264,19 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark -
+#pragma mark Seque Delegate
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"imageViewSegue"])
+    {
+        ImageViewController *vc = [segue destinationViewController];
+        vc.image = currentImage;
+    }
+}
+
 
 @end
 
